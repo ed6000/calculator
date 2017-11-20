@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Calculator</title>
+<style type="text/css">
+		input[type=button]{
+		width: 15%;
+		background-color: rgba(178,22,138,0.64);
+		font-size: 66px;
+		text-align: center;
+		border-radius: 44px;
+	}
+	body{
+		background-image: url("odb.jpg");
+	}
+	#center{
+		display: flex;
+		justify-content: center;
+	}
+	h1{
+		color: red;
+		letter-spacing: 8px;
+		font-family: Georgia;
+	}
+</style>
+</head>
+
+<body>
+	<div id="center">
+	<h1>OL DIRTY CALCULATOR</h1>
+	<br>
+	<form id="Calc" name="Calc">
+		<table border="4">
+			<tr>
+				<td><input readonly name="Input" size="27" type="text">
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><input name="one" onclick="Calc.Input.value += '1'" type="button" value=" 1 ">
+					<input name="two" onclick="Calc.Input.value += '2'" type="button" value=" 2 ">
+					<input name="three" onclick="Calc.Input.value += '3'" type="button" value=" 3 ">
+					<input name="C" onClick="Calc.Input.value = ' '" type="button" value=" C ">
+					<br>
+					<input name="four" onclick="Calc.Input.value += '4'" type="button" value=" 4 ">
+					<input name="five" onclick="Calc.Input.value += '5'" type="button" value=" 5 ">
+					<input name="six" onclick="Calc.Input.value += '6'" type="button" value=" 6 ">
+					<input name="mul" onClick="Calc.Input.value += '*'" type="button" value=" &times; ">
+					<br>
+					<input name="seven" onclick="Calc.Input.value += '7'" type="button" value=" 7 ">
+					<input name="eight" onclick="Calc.Input.value += '8'" type="button" value=" 8 ">
+					<input name="nine" onclick="Calc.Input.value += '9'" type="button" value=" 9 ">
+					<input name="div" onClick="Calc.Input.value += '/'" type="button" value=" &divide; ">
+					<br>
+					<input name="zero" onclick="Calc.Input.value += '0'" type="button" value=" 0 ">
+				<input name="plus" onclick="Calc.Input.value += ' + '" type="button" value=" + ">
+				<input name="minus" onclick="Calc.Input.value += ' - '" type="button" value=" - ">
+				<input name="DoIt" onclick="Calc.Input.value = eval(Calc.Input.value)" type="button" value=" = "><br><input name="exp" onClick="sq()" '^'" type="button" value=" square ">
+				<input name="avg" onClick="average()" 'average' type="button" value=" average ">
+		      </td>
+			</tr>
+		</table>
+	</form>
+</div>
+	<script type="text/javascript">
+		function sq(){
+			Calc.Input.value=Math.pow(eval(Calc.Input.value),2) //square the number inputted
+		}
+
+		function average(){
+			Calc.Input.value=eval(Calc.Input.value)/Calc.Input.value.split("+").length; //split according to + symbol then get the length. Add then divide by the length
+		}
+	</script>
+</body>
+</html>
